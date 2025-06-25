@@ -1,13 +1,266 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*------------- SCREEN STYLES (default browser view) -------------
+.print-header,
+.print-footer {
+  background-color: #f4f4f4;
+  padding: 16px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.print-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.print-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 1000;
+}
+
+/* Ensure content doesn't go behind header/footer  
+.print-body {
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+/* ------------- PRINT STYLES ------------- 
+@media print {
+  body {
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-header,
+  .print-footer {
+    position: fixed;
+    background: white;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .print-header {
+    top: 0;
+    padding: 16px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .print-footer {
+    bottom: 0;
+    padding: 16px;
+    border-top: 1px solid #ccc;
+  }
+
+  .print-body {
+    margin-top: 120px !important;
+    margin-bottom: 100px !important;
+  }
+
+  .print-body > * {
+    page-break-inside: avoid;
+  }
+}
+
+
+
+
+/* ----------- SCREEN VIEW STYLES (default browser view) ----------- */
+body {
+  padding: 0;
+  margin: 0;
+}
+body,
+html {
+  overflow-x: hidden;
+}
+.print-header,
+.print-footer {
+  background-color: transparent;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  position: static; /* <-- normal flow */
+}
+
+/* Main body spacing (not needed in screen view if header/footer are static) */
+.print-body {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.footer-disc {
+  text-align: justify;
+  font-size: 12px;
+  color: #3b3b3b;
+  padding: 1rem;
+}
+
+/* .first-page {
+  background-image: url("./images/bgimage.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  height: 50%;
+  width: 100%;
+  padding: 1rem 0;
+  margin: 0;
+  position: relative;
+  top: 10%;
+} */
+
+.layout {
+  padding: 2rem;
+}
+.right-side {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  text-align: justify;
+  color: #3b3b3b;
+}
+
+.main-logo {
+  height: 10rem;
+  width: auto;
+  padding: 1rem 0;
+}
+
+.left-side {
+  height: 50vh;
+}
+
+.card-left {
+  background-color: #e0f2fa;
+  border-top-right-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  padding: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header-logo {
+  height: 2rem;
+  width: auto;
+}
+
+/* .footer-logo {
+  height: 3rem;
+  width: auto;
+} */
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-disc {
+  flex: 1; /* take available width */
+  text-align: justify;
+  font-size: 12px;
+  color: #3b3b3b;
+  padding: 1rem 0;
+}
+
+.footer-logo {
+  height: 3rem;
+  width: auto;
+  flex-shrink: 0;
+}
+
+/* ----------- PRINT VIEW STYLES ----------- */
+/* @media print {
+  body.first-print-page .print-header {
+    display: none !important;
+  }
+  .layout {
+    padding: 0;
+  }
+
+  body {
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-header,
+  .print-footer {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .print-header {
+    top: 0;
+    padding: 1rem;
+  }
+
+  .print-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    padding: 16px;
+    z-index: 999;
+  }
+
+  /* .print-body {
+    margin-bottom: 100px !important; /* enough space for footer 
+  } 
+
+  .print-body {
+    margin-top: 120px !important; /* space for fixed header 
+    margin-bottom: 100px !important; /* space for fixed footer 
+  }
+
+  /* Avoid page breaks inside individual content blocks 
+  .print-body > * {
+    page-break-inside: avoid;
+  }
+} */
+
+@media print {
+  .print-header,
+  .print-footer {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .print-header {
+    top: 0;
+    padding: 1rem;
+  }
+
+  /* .print-footer {
+    bottom: 0;
+    padding: 16px;
+    border-top: 1px solid #ccc;
+    background-color: white;
+  } */
+
+  .print-footer {
+    bottom: 0;
+    padding: 16px;
+    border-top: 1px solid #ccc;
+  }
+
+  .print-body {
+    margin-top: 120px !important; /* header height */
+    margin-bottom: 120px !important; /* footer height */
+  }
+
+  /* Prevent page break inside content blocks */
+  .print-body > * {
+    page-break-inside: avoid;
+  }
 }
