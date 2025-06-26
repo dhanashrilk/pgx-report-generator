@@ -2,6 +2,7 @@ import React from "react";
 import DrugTable from "./DrugTable";
 import MethylphenidateTable from "./MethylphenidateTable";
 import RisperidoneTable from "./RisperidoneTable";
+import Footer from "./Footer";
 
 const SecondPage = () => {
   return (
@@ -17,6 +18,7 @@ const SecondPage = () => {
         <MethylphenidateTable />
         <h6 className="headline-gray text-center"> ANTIPSYCHOTICS</h6>
         <RisperidoneTable />
+        <Footer />
       </div>
     </div>
   );

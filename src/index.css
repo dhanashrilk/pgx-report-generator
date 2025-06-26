@@ -223,6 +223,11 @@ html {
 .custom-drug-table td {
   border-bottom: none !important; /* Remove Bootstrap's default thin gray border */
 }
+.footer-card {
+  background-color: #dce3e6;
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+}
 
 @media print {
   body {
