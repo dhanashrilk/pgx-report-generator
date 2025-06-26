@@ -5,6 +5,7 @@ import FirstPage from "./firstPage";
 import headerLogo from "./../images/horizontal-logo.png";
 import footerLogo from "./../images/footer-logo.png";
 import SecondPage from "./secondPage";
+import ThirdPage from "./thirdPage";
 
 export default function ReportPage() {
   const headerRef = useRef();
@@ -25,6 +26,7 @@ export default function ReportPage() {
       <main className="print-body">
         <FirstPage />
         <SecondPage />
+        <ThirdPage />
       </main>
 
       <footer className="print-footer">

@@ -232,6 +232,21 @@ html {
   font-size: 9px;
   margin: 0 1rem;
 }
+.card-sec {
+  padding: 1rem 0 0 1rem;
+  margin: 0.5rem;
+  border: 1px solid #4dc2cb;
+  border-top-left-radius: 2rem;
+}
+.card-sec h6 {
+  font-weight: 600;
+  color: #3b3b3b;
+  font-family: "Jost";
+}
+.card-sec p {
+  padding: 0;
+  margin: 0;
+}
 
 @media print {
   body {
