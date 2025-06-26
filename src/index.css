@@ -228,6 +228,10 @@ html {
   padding: 0.5rem 2rem;
   border-radius: 2rem;
 }
+.note-desc {
+  font-size: 9px;
+  margin: 0 1rem;
+}
 
 @media print {
   body {

@@ -48,6 +48,12 @@ const Footer = () => (
           </p>
         </div>
       </div>
+      <p className="note-desc">
+        Pharmacogenomic (PGx) response outlined in this report is derived from
+        peer-reviewed research and the patient’s specific genotype, enabling an
+        assessment of the patient’s likelihood of experiencing strong or reduced
+        efficacy, as well as high or low risk involvement with the treatment.
+      </p>
     </div>
   </footer>
 );
