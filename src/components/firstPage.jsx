@@ -4,15 +4,15 @@ import bgImage from "../images/bgimage.png";
 const FirstPage = () => {
   return (
     <div className="container">
-      <div class="row">
-        <div class="col left-side">
-          <img src={logoImg} className="main-logo" />
+      <div className="row">
+        <div className="col-md-6 left-side">
+          <img src={logoImg} className="main-logo" alt="Logo" />
         </div>
-        <div className="col first-page">
-          <img src={bgImage} className="" />
+        <div className="col-md-6 first-page d-flex align-items-center justify-content-center">
+          <img src={bgImage} className="img-fluid" alt="Background" />
         </div>
       </div>
-      <div class="container">
+      <div className="container">
         <div className="row">
           <div className="col">
             <div className="card-left">
@@ -83,6 +83,43 @@ const FirstPage = () => {
                 healthcare professionals can improve outcomes and provide more
                 individualized care for their patients.
               </p>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="input-section d-flex gap-4">
+            <div className="container mt-4">
+              <div className="row">
+                <div className="col-md-6">
+                  <div className="form-line mb-3">
+                    <label>Electronically Signed By</label>
+                    <div className="line"></div>
+                  </div>
+                  <div className="form-line mb-3">
+                    <label>Literature Information Reviewed By</label>
+                    <div className="line"></div>
+                  </div>
+                  <div className="form-line mb-3">
+                    <label>Comment</label>
+                    <div className="line"></div>
+                  </div>
+                </div>
+
+                <div className="col-md-6">
+                  <div className="form-line mb-3">
+                    <label>Contact Information</label>
+                    <div className="line"></div>
+                  </div>
+                  <div className="form-line mb-3">
+                    <label>Phone number</label>
+                    <div className="line"></div>
+                  </div>
+                  <div className="form-line mb-3">
+                    <label>Email</label>
+                    <div className="line"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,123 +1,19 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Card, CardContent, Typography, Button } from "@mui/material";
 import "../index.css";
 import FirstPage from "./firstPage";
 import headerLogo from "./../images/horizontal-logo.png";
 import footerLogo from "./../images/footer-logo.png";
-
-// const drugData = [
-//   {
-//     drug: "Methylphenidate",
-//     gene: "TRIB3 (RS2295490)",
-//     genotype: "A>G (GG)",
-//     impact: "Improved Clinical Outcome",
-//     details:
-//       "GG genotype is associated with better efficacy in ADHD treatment.",
-//   },
-//   {
-//     drug: "Carbamazepine",
-//     gene: "CYP2C9 (RS9332120)",
-//     genotype: "T>C (TC)",
-//     impact: "Significant Interaction",
-//     details:
-//       "Intermediate chance of poor response in difficult-to-treat epilepsy.",
-//   },
-//   {
-//     drug: "Carbamazepine",
-//     gene: "CYP2C9 (RS9332120)",
-//     genotype: "T>C (TC)",
-//     impact: "Significant Interaction",
-//     details:
-//       "Intermediate chance of poor response in difficult-to-treat epilepsy.",
-//   },
-//   {
-//     drug: "Carbamazepine",
-//     gene: "CYP2C9 (RS9332120)",
-//     genotype: "T>C (TC)",
-//     impact: "Significant Interaction",
-//     details:
-//       "Intermediate chance of poor response in difficult-to-treat epilepsy.",
-//   },
-//   {
-//     drug: "Carbamazepine",
-//     gene: "CYP2C9 (RS9332120)",
-//     genotype: "T>C (TC)",
-//     impact: "Significant Interaction",
-//     details:
-//       "Intermediate chance of poor response in difficult-to-treat epilepsy.",
-//   },
-//   {
-//     drug: "Carbamazepine",
-//     gene: "CYP2C9 (RS9332120)",
-//     genotype: "T>C (TC)",
-//     impact: "Significant Interaction",
-//     details:
-//       "Intermediate chance of poor response in difficult-to-treat epilepsy.",
-//   },
-//   {
-//     drug: "Carbamazepine",
-//     gene: "CYP2C9 (RS9332120)",
-//     genotype: "T>C (TC)",
-//     impact: "Significant Interaction",
-//     details:
-//       "Intermediate chance of poor response in difficult-to-treat epilepsy.",
-//   },
-//   {
-//     drug: "Carbamazepine",
-//     gene: "CYP2C9 (RS9332120)",
-//     genotype: "T>C (TC)",
-//     impact: "Significant Interaction",
-//     details:
-//       "Intermediate chance of poor response in difficult-to-treat epilepsy.",
-//   },
-//   {
-//     drug: "Carbamazepine",
-//     gene: "CYP2C9 (RS9332120)",
-//     genotype: "T>C (TC)",
-//     impact: "Significant Interaction",
-//     details:
-//       "Intermediate chance of poor response in difficult-to-treat epilepsy.",
-//   },
-//   {
-//     drug: "Carbamazepine",
-//     gene: "CYP2C9 (RS9332120)",
-//     genotype: "T>C (TC)",
-//     impact: "Significant Interaction",
-//     details:
-//       "Intermediate chance of poor response in difficult-to-treat epilepsy.",
-//   },
-//   {
-//     drug: "Carbamazepine",
-//     gene: "CYP2C9 (RS9332120)",
-//     genotype: "T>C (TC)",
-//     impact: "Significant Interaction",
-//     details:
-//       "Intermediate chance of poor response in difficult-to-treat epilepsy.",
-//   },
-//   {
-//     drug: "Carbamazepine",
-//     gene: "CYP2C9 (RS9332120)",
-//     genotype: "T>C (TC)",
-//     impact: "Significant Interaction",
-//     details:
-//       "Intermediate chance of poor response in difficult-to-treat epilepsy.",
-//   },
-//   {
-//     drug: "Carbamazepine",
-//     gene: "CYP2C9 (RS9332120)",
-//     genotype: "T>C (TC)",
-//     impact: "Significant Interaction",
-//     details:
-//       "Intermediate chance of poor response in difficult-to-treat epilepsy.",
-//   },
-// ];
+import SecondPage from "./secondPage";
 
 export default function ReportPage() {
-  //   const handlePrint = () => window.print();
-
+  const headerRef = useRef();
   return (
     <div className="print-container">
-      <header className="print-header d-flex justify-content-between">
+      <header
+        className="print-header d-flex justify-content-between"
+        ref={headerRef}
+      >
         <div>
           <img src={headerLogo} className="header-logo" />
         </div>
@@ -127,24 +23,8 @@ export default function ReportPage() {
       </header>
 
       <main className="print-body">
-        {/* {drugData.map((item, index) => (
-          <Card key={index} variant="outlined" sx={{ mb: 2 }}>
-            <CardContent>
-              <Typography variant="h6">{item.drug}</Typography>
-              <Typography variant="body2">
-                <b>Gene:</b> {item.gene}
-              </Typography>
-              <Typography variant="body2">
-                <b>Genotype:</b> {item.genotype}
-              </Typography>
-              <Typography variant="body2">
-                <b>Clinical Impact:</b> {item.impact}
-              </Typography>
-              <Typography variant="body2">{item.details}</Typography>
-            </CardContent>
-          </Card>
-        ))} */}
         <FirstPage />
+        <SecondPage />
       </main>
 
       <footer className="print-footer">
@@ -162,6 +42,7 @@ export default function ReportPage() {
             practice guidelines, and other relevant factors such as family
             history when making treatment decisions.
           </p>
+
           <img src={footerLogo} className="footer-logo" alt="Footer Logo" />
         </div>
       </footer>
