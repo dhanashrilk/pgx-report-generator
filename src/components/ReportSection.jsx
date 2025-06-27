@@ -6,6 +6,8 @@ import headerLogo from "./../images/horizontal-logo.png";
 import footerLogo from "./../images/footer-logo.png";
 import SecondPage from "./secondPage";
 import ThirdPage from "./thirdPage";
+import FourthPage from "./fourthPage";
+import FifthPage from "./fifthPage";
 
 export default function ReportPage() {
   const headerRef = useRef();
@@ -27,6 +29,8 @@ export default function ReportPage() {
         <FirstPage />
         <SecondPage />
         <ThirdPage />
+        <FourthPage />
+        <FifthPage />
       </main>
 
       <footer className="print-footer">
@@ -48,12 +52,6 @@ export default function ReportPage() {
           <img src={footerLogo} className="footer-logo" alt="Footer Logo" />
         </div>
       </footer>
-
-      {/* <div className="no-print">
-        <Button variant="contained" onClick={handlePrint}>
-          Print Report
-        </Button>
-      </div> */}
     </div>
   );
 }

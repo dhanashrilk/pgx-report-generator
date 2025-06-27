@@ -118,12 +118,16 @@ html {
 
 .head-line {
   font-family: "Jost", sans-serif;
-  font-weight: 200;
+  font-weight: 400;
   padding: 1rem;
   width: 100%;
   background-color: #00bad7;
   color: #fff;
   border-top-left-radius: 2rem;
+}
+.head-line.test-method {
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 0;
 }
 .headline-green {
   font-weight: 600;
@@ -246,6 +250,13 @@ html {
 .card-sec p {
   padding: 0;
   margin: 0;
+}
+.desc-text {
+  background-color: #eaf6fa;
+  color: #333;
+}
+.reference {
+  border: 1px solid #000;
 }
 
 @media print {
