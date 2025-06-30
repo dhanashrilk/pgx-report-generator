@@ -66,10 +66,10 @@ const risperidoneData = [
 
 export default function RisperidoneTable() {
   return (
-    <div className="container mt-4">
-      <div className="table-responsive">
-        <table className="table custom-drug-table">
-          <thead className="text-center align-middle">
+    <div className="custom-container mt-4">
+      <div className="custom-table-responsive">
+        <table className="custom-table custom-drug-table">
+          <thead className="custom-text-center custom-align-middle">
             <tr>
               <th>Drug</th>
               <th>Gene&nbsp;•&nbsp;Genotype</th>
@@ -92,9 +92,9 @@ export default function RisperidoneTable() {
                   <div className="text-muted">{item.aliases}</div>
                 </td>
                 <td className="white-space-pre-line">{item.gene}</td>
-                <td className="d-flex align-items-start justify-content-between gap-2">
+                <td className="custom-flex custom-align-start custom-justify-between custom-gap-2">
                   <div className="pe-2">{item.impact}</div>
-                  <div className="d-flex flex-column align-items-center gap-1">
+                  <div className="custom-flex custom-flex-column custom-align-center custom-gap-1">
                     {item.pgxType.map((type, i) => (
                       <span className="pgx-type" key={i}>
                         {type}
@@ -102,8 +102,8 @@ export default function RisperidoneTable() {
                     ))}
                   </div>
                 </td>
-                <td className="text-center">
-                  <div className="d-flex align-items-center justify-content-center gap-2">
+                <td className="custom-text-center">
+                  <div className="custom-flex custom-align-center custom-justify-center custom-gap-2">
                     <span
                       className={`interaction-badge ${item.interactionType}`}
                     >

@@ -2,11 +2,10 @@ import { FiThumbsUp, FiThumbsDown } from "react-icons/fi";
 
 const Footer = () => (
   <footer className="card-footer">
-    <div className="footer-card ">
-      <div className="border-bottom border-light-subtle d-flex justify-content-between py-3">
-        {" "}
-        <div className="d-flex flex-column ">
-          <p className="py-0 mb-0"> Drug Risk assessment annotations</p>
+    <div className="footer-card">
+      <div className="footer-top">
+        <div className="footer-col">
+          <p className="py-0 mb-0">Drug Risk assessment annotations</p>
           <p className="py-0 mb-0">
             <span className={`interaction-badge improved mx-2`}>
               <FiThumbsUp />
@@ -14,7 +13,7 @@ const Footer = () => (
             Improved Clinical outcome
           </p>
         </div>
-        <div>
+        <div className="footer-col">
           <p>
             <span className={`interaction-badge moderate mx-2`}>
               <FiThumbsUp />
@@ -22,7 +21,7 @@ const Footer = () => (
             Moderate interaction
           </p>
         </div>
-        <div>
+        <div className="footer-col">
           <p>
             <span className={`interaction-badge significant mx-2`}>
               <FiThumbsDown />
@@ -31,8 +30,9 @@ const Footer = () => (
           </p>
         </div>
       </div>
-      <div className="row py-3">
-        <div className="col-8 d-flex flex-column">
+
+      <div className="footer-bottom">
+        <div className="footer-left">
           <p className="py-0 mb-0">
             Pharmacokinetic & Pharmacodynamic genes annotations
           </p>
@@ -41,13 +41,14 @@ const Footer = () => (
             <span className="pgx-type text-center px-2 mx-2">PD</span>
           </p>
         </div>
-        <div className="col-4 d-flex flex-column justify-content-start">
-          <p> *: FDA</p>
+        <div className="footer-right">
+          <p>*: FDA</p>
           <p className="" style={{ color: "#f59524" }}>
             *: CPIC
           </p>
         </div>
       </div>
+
       <p className="note-desc">
         Pharmacogenomic (PGx) response outlined in this report is derived from
         peer-reviewed research and the patient’s specific genotype, enabling an

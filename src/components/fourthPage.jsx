@@ -10,21 +10,20 @@ const descriptionDetails = [
 
 const FourthPage = () => {
   return (
-    <div className="container py-4">
-      <div className="row">
-        <h5 className="head-line test-method text-center mb-0">
-          {" "}
+    <div className="custom-container padding-y-4">
+      <div className="custom-row">
+        <h5 className="head-line test-method custom-text-center custom-mb-0">
           TEST METHODOLOGY
         </h5>
-        <div className="desc-text m-0 py-2">
-          <ol className="lh-md fw-medium my-2">
-            {descriptionDetails.map((item) => (
-              <li className="">{item}</li>
+        <div className="desc-text custom-m-0 custom-py-2">
+          <ol className="custom-lh-md custom-fw-medium custom-my-2">
+            {descriptionDetails.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
           </ol>
         </div>
-        <div className="reference py-2 mt-2">
-          <p className="fw-bold m-0"> REFERENCES</p>
+        <div className="reference custom-py-2 custom-mt-2">
+          <p className="custom-fw-bold custom-m-0">REFERENCES</p>
         </div>
         <p>
           This report relies on literature information that was aggregated and

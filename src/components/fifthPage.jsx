@@ -2,8 +2,8 @@ import React from "react";
 
 const FifthPage = () => {
   return (
-    <div className="container py-4">
-      <div className="row">
+    <div className="custom-container py-4">
+      <div className="custom-row">
         <h5 className="head-line text-center mb-2">ADDITIONAL INFORMATION</h5>
         <h6 className="headline-green text-center fw-normal fs-5 mb-0">
           DISCLAIMER

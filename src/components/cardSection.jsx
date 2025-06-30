@@ -148,9 +148,9 @@ export const drugData = [
 
 const CardSection = () => {
   return (
-    <div className="container">
+    <div className="custom-container">
       <div
-        className="wrapper"
+        className="card-grid-wrapper"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
@@ -161,27 +161,22 @@ const CardSection = () => {
         {drugData.map((section, idx) => {
           const customStyle = {};
 
-          // Positioning customizations to match screenshot layout
           if (section.category === "ANTIEPILEPTICS") {
             customStyle.gridColumn = "2 / 0";
             customStyle.gridRow = "1 / 4";
           }
-
           if (section.category === "PSYCHOSTIMULANTS") {
             customStyle.gridColumn = "3 / 4";
             customStyle.gridRow = "2 / 3";
           }
-
           if (section.category === "ANTIDEPRESSANTS") {
             customStyle.gridColumn = "3 / 4";
             customStyle.gridRow = "1 / 2";
           }
-
           if (section.category === "PSYCHOANALEPTICS") {
             customStyle.gridColumn = "2 / 3";
             customStyle.gridRow = "5 / 7";
           }
-
           if (section.category === "PSYCHOLEPTICS") {
             customStyle.gridColumn = "3 / 4";
             customStyle.gridRow = "6 / 7";
@@ -201,7 +196,6 @@ const CardSection = () => {
               className="card-sec"
               style={{
                 border: "1px solid #00bcd4",
-
                 padding: "12px",
                 background: "#fff",
                 ...customStyle,

@@ -65,10 +65,10 @@ const drugData = [
 
 export default function DrugTable() {
   return (
-    <div className="container mt-4">
-      <div className="table-responsive">
-        <table className="table  custom-drug-table">
-          <thead className="text-center align-middle">
+    <div className="custom-container mt-4">
+      <div className="custom-table-responsive">
+        <table className="custom-table custom-drug-table">
+          <thead className="custom-text-center custom-align-middle">
             <tr>
               <th>Drug</th>
               <th>Gene&nbsp;•&nbsp;Genotype</th>
@@ -85,23 +85,22 @@ export default function DrugTable() {
                   <div className="text-muted">{item.aliases}</div>
                 </td>
                 <td className="white-space-pre-line">{item.gene}</td>
-                <td className="d-flex align-items-start justify-content-between gap-2">
+                <td className="custom-flex custom-align-start custom-justify-between custom-gap-2">
                   <div className="pe-2">{item.impact}</div>
-                  <span className="pgx-type text-center px-2">
+                  <span className="pgx-type custom-text-center px-2">
                     {item.pgxType}
                   </span>
                 </td>
-                <td className="text-center">
-                  <div className="d-flex align-items-center justify-content-center">
+                <td className="custom-text-center">
+                  <div className="custom-flex custom-align-center custom-justify-center">
                     <span
-                      className={`interaction-badge  ${item.interactionType}`}
+                      className={`interaction-badge ${item.interactionType}`}
                     >
                       {item.icon}
                     </span>
                     <div className="interaction-text">{item.interaction}</div>
                   </div>
                 </td>
-
                 <td>{item.citation}</td>
               </tr>
             ))}
