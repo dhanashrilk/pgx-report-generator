@@ -13,10 +13,7 @@ export default function ReportPage() {
   const headerRef = useRef();
   return (
     <div className="print-container">
-      <header
-        className="print-header d-flex justify-content-between"
-        ref={headerRef}
-      >
+      <header className="print-header" ref={headerRef}>
         <div>
           <img src={headerLogo} className="header-logo" />
         </div>

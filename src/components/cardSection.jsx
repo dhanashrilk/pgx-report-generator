@@ -163,7 +163,7 @@ const CardSection = () => {
 
           if (section.category === "ANTIEPILEPTICS") {
             customStyle.gridColumn = "2 / 0";
-            customStyle.gridRow = "1 / 4";
+            customStyle.gridRow = "1 / 2";
           }
           if (section.category === "PSYCHOSTIMULANTS") {
             customStyle.gridColumn = "3 / 4";

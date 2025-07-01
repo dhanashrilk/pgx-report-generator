@@ -16,7 +16,7 @@ const FirstPage = () => {
       <div className="pdf-row patient-info-section">
         <div className="pdf-col card-left">
           <div className="patient-info">
-            <div className="labels">
+            <div className="labels mx-2">
               <p>
                 <b>PATIENT:</b>
               </p>

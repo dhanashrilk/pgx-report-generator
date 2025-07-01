@@ -14,6 +14,7 @@ const Footer = () => (
           </p>
         </div>
         <div className="footer-col">
+          <p className="py-0 mb-0">&nbsp;</p>
           <p>
             <span className={`interaction-badge moderate mx-2`}>
               <FiThumbsUp />
@@ -22,6 +23,7 @@ const Footer = () => (
           </p>
         </div>
         <div className="footer-col">
+          <p className="py-0 mb-0">&nbsp;</p>
           <p>
             <span className={`interaction-badge significant mx-2`}>
               <FiThumbsDown />

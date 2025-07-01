@@ -15,11 +15,16 @@ html {
   overflow-x: hidden;
 }
 
+.print-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .print-header,
 .print-footer {
   background-color: transparent;
   padding: 1rem;
-  width: 100%;
+  /* width: 100%; */
   text-align: center;
   position: static; /* Normal flow for screen */
 }
@@ -64,7 +69,6 @@ html {
   background-color: #e0f2fa;
   border-top-right-radius: 3rem;
   border-bottom-left-radius: 3rem;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .header-logo {
@@ -94,7 +98,7 @@ html {
   border-radius: 1rem;
   padding: 2rem;
   color: #1e1b1c;
-  width: 100% !important;
+  /* width: 100% !important; */
 }
 
 .form-line label {
@@ -120,10 +124,12 @@ html {
   font-family: "Jost", sans-serif;
   font-weight: 400;
   padding: 1rem;
-  width: 100%;
+  /* width: 100%; */
   background-color: #00bad7;
   color: #fff;
   border-top-left-radius: 2rem;
+  font-size: 18px;
+  margin: 0.5rem 0;
 }
 .head-line.test-method {
   border-top-right-radius: 2rem;
@@ -132,19 +138,21 @@ html {
 .headline-green {
   font-weight: 600;
   padding: 1rem;
-  width: 100%;
   background-color: #5dc0a0;
   color: #fff;
   font-family: "Jost", sans-serif;
+  font-size: 16px;
+  margin: 0.5rem 0;
 }
 .headline-gray {
   font-weight: 600;
   padding: 1rem;
-  width: 100%;
+  /* width: 100%; */
   background-color: #dae5ea;
   color: #5a676e;
-  font-family: "Inter", sans-serif;
   border-bottom-right-radius: 2rem;
+  font-size: 16px;
+  margin: 0.5rem 0;
 }
 
 /* Table styles  */
@@ -182,6 +190,9 @@ html {
   margin-top: 4px;
   font-weight: 600;
   font-family: "Jost", sans-serif;
+}
+.pgx-type.px-2 {
+  padding: 0;
 }
 
 .custom-drug-table td:nth-child(4),
@@ -243,9 +254,9 @@ html {
   border-top-left-radius: 2rem;
 }
 .card-sec h6 {
+  font-size: 16px;
   font-weight: 600;
   color: #3b3b3b;
-  font-family: "Jost";
 }
 .card-sec p {
   padding: 0;
@@ -255,7 +266,7 @@ html {
   background-color: #eaf6fa;
   color: #333;
   margin-top: 0;
-  padding-top: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 .reference {
@@ -276,7 +287,7 @@ html {
   .print-header,
   .print-footer {
     position: fixed;
-    width: 100%;
+    /* width: 100%; */
     z-index: 999;
     background-color: white;
   }
@@ -313,7 +324,6 @@ html {
 
 .pdf-container {
   padding: 20px;
-  font-family: Arial, sans-serif;
   font-size: 14px;
   color: #000;
 }
@@ -321,9 +331,9 @@ html {
 .pdf-row {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  /* width: 100%; */
   margin-bottom: 20px;
-  height: 500px;
+  /* height: 500px; */
 }
 
 .pdf-col {
@@ -372,7 +382,6 @@ html {
 .values {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 .labels {
   margin-bottom: 0 !important;
@@ -419,7 +428,6 @@ html {
 
 .pdf-container {
   padding: 32px;
-  font-family: Arial, sans-serif;
   color: #000;
 }
 
@@ -471,7 +479,6 @@ html {
 .custom-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: Arial, sans-serif;
   font-size: 14px;
 }
 
@@ -567,7 +574,6 @@ html {
 .custom-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: Arial, sans-serif;
   font-size: 14px;
 }
 
@@ -671,7 +677,6 @@ html {
 .custom-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: Arial, sans-serif;
   font-size: 14px;
 }
 

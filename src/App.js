@@ -6,13 +6,7 @@ import PDFExportButton from "./components/ReportSection";
 import PrintLogic from "./components/PrintLogic";
 
 function App() {
-  return (
-    <div>
-      {/* <Header /> */}
-      <PDFExportButton />
-      {/* <Footer /> */}
-    </div>
-  );
+  return <PDFExportButton />;
 }
 
 export default App;

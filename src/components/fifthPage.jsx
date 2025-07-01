@@ -9,7 +9,7 @@ const FifthPage = () => {
           DISCLAIMER
         </h6>
         <div className="desc-text m-0 py-2">
-          <p className="p-2 fs-5">
+          <p className="px-2">
             The content provided as a professional service by PODhealth has not
             been reviewed or approved by the FDA. This diagnostic report,
             including all findings and interpretations, is provided exclusively
@@ -22,7 +22,7 @@ const FifthPage = () => {
             intended to serve as a companion diagnostic tool to aid in the
             patient’s management and treatment planning
           </p>
-          <p className="p-2 fs-5">
+          <p className="px-2">
             This report is intended for medical and scientific evaluation
             purposes only. ALL methodologies, including the WES technology and
             pharmacogenomic interaction analysis utilized in this report, are
@@ -34,7 +34,7 @@ const FifthPage = () => {
             as sample quality, genetic variability, or other clinical
             considerations.
           </p>
-          <p className="p-2 fs-5">
+          <p className="px-2">
             {" "}
             The information contained in this report is intended to support, not
             replace, the professional judgment of the treating neurologist or
@@ -45,7 +45,7 @@ const FifthPage = () => {
             professional is responsible for interpreting these findings within
             the context of the patient’s overall medical condition.
           </p>
-          <p className="p-2 fs-5">
+          <p className="px-2">
             By using the information provided in this report, the ordering
             medical professional acknowledges that any decisions made based on
             the diagnostic findings are at their sole discretion. PODhealth,
@@ -53,14 +53,14 @@ const FifthPage = () => {
             not be liable for any interpretations or treatment decisions made
             based on this report.
           </p>
-          <p className="p-2 fs-5">
+          <p className="px-2">
             In accordance with the Health Insurance Portability and
             Accountability Act (HIPAA), all patient information contained in
             this report is confidential and intended solely for the use of the
             individual or entity to whom it is addressed. Unauthorized use,
             disclosure, or distribution of this report is strictly prohibited.
           </p>
-          <p className="p-2 fs-5">
+          <p className="px-2">
             {" "}
             By accepting this report, the ordering medical professional
             acknowledges their understanding and acceptance of these terms and
@@ -73,7 +73,7 @@ const FifthPage = () => {
           </p>
         </div>
 
-        <p className="fs-5 p-2">
+        <p className="px-2">
           To schedule your complimentary consultation, please call
           1-800-XXX-XXXX.
         </p>
