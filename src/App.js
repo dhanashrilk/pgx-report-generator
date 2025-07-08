@@ -1,12 +1,15 @@
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import "./index.css";
-import PDFExportButton from "./components/ReportSection";
-import PrintLogic from "./components/PrintLogic";
+import { PDFViewer } from "@react-pdf/renderer";
+import MyPDFDocument from "./components/ReportSection";
 
-function App() {
-  return <PDFExportButton />;
-}
+const App = () => {
+  return (
+    <div style={{ height: "100vh" }}>
+      <PDFViewer width="100%" height="100%">
+        <MyPDFDocument />
+      </PDFViewer>
+    </div>
+  );
+};
 
 export default App;

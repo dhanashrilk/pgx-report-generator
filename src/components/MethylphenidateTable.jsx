@@ -1,5 +1,7 @@
-import { FiThumbsUp, FiThumbsDown } from "react-icons/fi";
+import React from "react";
+import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
 
+// Sample data
 const methylphenidateData = [
   {
     drug: "Methylphenidate",
@@ -8,7 +10,7 @@ const methylphenidateData = [
     impact:
       "This patient with the CT genotype have an intermediate risk of experiencing side effects from methylphenidate, which is associated with increased stimulant intolerance in children with Autism Spectrum Disorder.",
     pgxType: ["PK", "PD"],
-    icon: <FiThumbsDown />,
+    icon: "👎",
     interaction: "Significant Interaction",
     interactionType: "significant",
     citation: "PMCID: PMC4034115",
@@ -20,7 +22,7 @@ const methylphenidateData = [
     impact:
       "This patient with the GG genotype have the lowest risk of suboptimal response to methylphenidate, as the G allele is associated with improved efficacy in ADHD patients.",
     pgxType: ["PD"],
-    icon: <FiThumbsUp />,
+    icon: "👍",
     interaction: "Improved Clinical outcome",
     interactionType: "improved",
     citation: "PMID: PMC5789875",
@@ -32,70 +34,102 @@ const methylphenidateData = [
     impact:
       "This patient with the GG genotype have the lowest risk of suboptimal response to methylphenidate, as the G allele is associated with improved efficacy in ADHD patients.",
     pgxType: ["PD"],
-    icon: <FiThumbsUp />,
+    icon: "👍",
     interaction: "Improved Clinical outcome",
     interactionType: "improved",
     citation: "PMID: PMC5789875",
   },
 ];
 
-export default function MethylphenidateTable() {
-  return (
-    <div className="custom-container mt-4">
-      <div className="custom-table-responsive">
-        <table className="custom-table custom-drug-table">
-          <thead className="custom-text-center custom-align-middle">
-            <tr>
-              <th>Drug</th>
-              <th>Gene&nbsp;•&nbsp;Genotype</th>
-              <th>Clinical Impact</th>
-              <th className="pgx-column">
-                PGx Response
-                <br />
-                <span
-                  className="pgx-subtext"
-                  style={{ fontWeight: "300", fontSize: "12px" }}
-                >
-                  &nbsp;exclusively&nbsp;by&nbsp; NeuroPrecision
-                </span>
-              </th>
-              <th>Citations</th>
-            </tr>
-          </thead>
-          <tbody>
-            {methylphenidateData.map((item, index) => (
-              <tr key={index}>
-                <td>
-                  <strong>{item.drug}</strong>
-                  <div className="text-muted">{item.aliases}</div>
-                </td>
-                <td className="white-space-pre-line">{item.gene}</td>
-                <td className="custom-flex custom-align-start custom-justify-between custom-gap-2">
-                  <div className="pe-2">{item.impact}</div>
-                  <div className="custom-flex custom-flex-column custom-align-center custom-gap-1">
-                    {item.pgxType.map((type, i) => (
-                      <span className="pgx-type" key={i}>
-                        {type}
-                      </span>
-                    ))}
-                  </div>
-                </td>
-                <td className="custom-text-center">
-                  <div className="custom-flex custom-align-center custom-justify-center custom-gap-2">
-                    <span
-                      className={`interaction-badge ${item.interactionType}`}
-                    >
-                      {item.icon}
-                    </span>
-                    <div className="interaction-text">{item.interaction}</div>
-                  </div>
-                </td>
-                <td>{item.citation}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-}
+// Styles (shared structure with previous file)
+const styles = StyleSheet.create({
+  page: {
+    padding: 20,
+    fontSize: 10,
+    fontFamily: "Helvetica",
+  },
+  table: {
+    display: "table",
+    width: "auto",
+    marginVertical: 10,
+    borderStyle: "solid",
+    borderWidth: 1,
+    borderRightWidth: 0,
+    borderBottomWidth: 0,
+  },
+  tableRow: {
+    flexDirection: "row",
+  },
+  tableColHeader: {
+    width: "20%",
+    borderStyle: "solid",
+    borderBottomWidth: 1,
+    borderRightWidth: 1,
+    backgroundColor: "#f0f0f0",
+    padding: 4,
+    fontWeight: "bold",
+  },
+  tableCol: {
+    width: "20%",
+    borderStyle: "solid",
+    borderBottomWidth: 1,
+    borderRightWidth: 1,
+    padding: 4,
+  },
+  longCol: {
+    width: "40%",
+    padding: 4,
+    borderStyle: "solid",
+    borderBottomWidth: 1,
+    borderRightWidth: 1,
+  },
+  preLine: {
+    whiteSpace: "pre-line",
+  },
+});
+
+// PDF Component
+const MethylphenidateTablePDF = () => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      <Text style={{ fontSize: 14, marginBottom: 10, textAlign: "center" }}>
+        Methylphenidate Gene-Drug Interaction Table
+      </Text>
+
+      <View style={styles.table}>
+        {/* Header */}
+        <View style={styles.tableRow}>
+          <Text style={styles.tableColHeader}>Drug</Text>
+          <Text style={styles.tableColHeader}>Gene • Genotype</Text>
+          <Text style={styles.longCol}>Clinical Impact</Text>
+          <Text style={styles.tableColHeader}>
+            PGx Response
+            {"\n"}
+            (NeuroPrecision)
+          </Text>
+          <Text style={styles.tableColHeader}>Citations</Text>
+        </View>
+
+        {/* Rows */}
+        {methylphenidateData.map((item, index) => (
+          <View style={styles.tableRow} key={index}>
+            <Text style={styles.tableCol}>
+              {item.drug}
+              {"\n"}
+              <Text style={{ color: "gray" }}>{item.aliases}</Text>
+            </Text>
+            <Text style={styles.tableCol}>{item.gene}</Text>
+            <Text style={styles.longCol}>{item.impact}</Text>
+            <Text style={styles.tableCol}>
+              {item.icon} {item.interaction}
+              {"\n"}({item.pgxType.join(", ")})
+            </Text>
+            <Text style={styles.tableCol}>{item.citation}</Text>
+          </View>
+        ))}
+      </View>
+    </Page>
+  </Document>
+);
+
+export default MethylphenidateTablePDF;

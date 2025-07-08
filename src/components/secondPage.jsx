@@ -1,27 +1,74 @@
 import React from "react";
+import { View, Text, StyleSheet } from "@react-pdf/renderer";
 import DrugTable from "./DrugTable";
 import MethylphenidateTable from "./MethylphenidateTable";
 import RisperidoneTable from "./RisperidoneTable";
 import Footer from "./Footer";
 
-const SecondPage = () => {
-  return (
-    <div className="custom-container">
-      <div className="custom-row">
-        <h5 className="head-line text-center">GENE DRUG INTERACTION</h5>
-        <h6 className="headline-green text-center">
-          Drug Synopsis with risk assessment
-        </h6>
-        <h6 className="headline-gray text-center">ANTIEPILEPTICS</h6>
-        <DrugTable />
-        <h6 className="headline-gray text-center">PSYCHOSTIMULANTS</h6>
-        <MethylphenidateTable />
-        <h6 className="headline-gray text-center">ANTIPSYCHOTICS</h6>
-        <RisperidoneTable />
-        <Footer />
-      </div>
-    </div>
-  );
-};
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 10,
+    marginTop: 15,
+    width: "100%",
+  },
+  section: {
+    marginBottom: 10,
+  },
+  titleBlue: {
+    backgroundColor: "#00BAD7",
+    color: "#fff",
+    padding: 10,
+    fontSize: 14,
+    borderTopLeftRadius: 12,
+    textAlign: "center",
+    fontWeight: 500,
+  },
+  titleGreen: {
+    backgroundColor: "#5DC0A0",
+    color: "#fff",
+    padding: 10,
+    fontSize: 12,
+    textAlign: "center",
+    fontWeight: 600,
+  },
+  titleGray: {
+    backgroundColor: "#DAE5EA",
+    color: "#5A676E",
+    padding: 10,
+    fontSize: 12,
+    textAlign: "center",
+    fontWeight: 600,
+    borderBottomRightRadius: 12,
+  },
+});
+
+const SecondPage = () => (
+  <View style={styles.container}>
+    <View style={styles.section}>
+      <Text style={styles.titleBlue}>GENE DRUG INTERACTION</Text>
+    </View>
+
+    <View style={styles.section}>
+      <Text style={styles.titleGreen}>Drug Synopsis with risk assessment</Text>
+    </View>
+
+    <View style={styles.section}>
+      <Text style={styles.titleGray}>ANTIEPILEPTICS</Text>
+      <DrugTable />
+    </View>
+
+    <View style={styles.section}>
+      <Text style={styles.titleGray}>PSYCHOSTIMULANTS</Text>
+      <MethylphenidateTable />
+    </View>
+
+    <View style={styles.section}>
+      <Text style={styles.titleGray}>ANTIPSYCHOTICS</Text>
+      <RisperidoneTable />
+    </View>
+
+    <Footer />
+  </View>
+);
 
 export default SecondPage;

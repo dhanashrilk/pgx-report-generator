@@ -172,10 +172,6 @@ html {
   font-size: 12px;
 }
 
-.white-space-pre-line {
-  white-space: pre-line;
-}
-
 .pgx-type {
   display: inline-flex;
   align-items: center;
@@ -533,10 +529,6 @@ html {
   font-size: 12px;
 }
 
-.white-space-pre-line {
-  white-space: pre-line;
-}
-
 .interaction-badge {
   font-size: 18px;
   margin-right: 8px;
@@ -566,10 +558,6 @@ html {
   margin-top: 1.5rem;
 }
 
-.custom-table-responsive {
-  overflow-x: auto;
-}
-
 /* Table Styling */
 .custom-table {
   width: 100%;
@@ -590,10 +578,6 @@ html {
 
 .custom-align-middle th {
   vertical-align: middle;
-}
-
-.white-space-pre-line {
-  white-space: pre-line;
 }
 
 .text-muted {
@@ -667,10 +651,6 @@ html {
 
 .mt-4 {
   margin-top: 1.5rem;
-}
-
-.custom-table-responsive {
-  overflow-x: auto;
 }
 
 /* Table Styling */
