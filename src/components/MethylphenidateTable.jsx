@@ -41,7 +41,6 @@ const methylphenidateData = [
   },
 ];
 
-// Styles
 const borderColor = "#53c4cd";
 
 const styles = StyleSheet.create({
@@ -63,7 +62,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: borderColor,
     breakInside: "avoid",
-    paddingTop: 4,
+    paddingTop: 8,
   },
   tableColHeader: {
     width: "15%",
@@ -111,14 +110,25 @@ const styles = StyleSheet.create({
   },
 });
 
-// PDF Component
 const MethylphenidateTablePDF = () => (
-  <View>
-    {/* <Text style={{ fontSize: 14, marginBottom: 10, textAlign: "center" }}>
-      Methylphenidate Gene-Drug Interaction Table
-    </Text> */}
+  <View style={styles.table}>
+    <View
+      style={{
+        flexDirection: "row",
+        flexWrap: "nowrap",
+        breakInside: "avoid",
+      }}
+    >
+      <View style={styles.tableHeader} wrap={false}>
+        <Text style={styles.tableColHeader}>Drug</Text>
+        <Text style={styles.tableColHeader}>Gene&nbsp;•&nbsp;Genotype</Text>
+        <Text style={styles.longColHeader}>Clinical Impact</Text>
+        <Text style={styles.tableColHeader}>PGx</Text>
+        <Text style={styles.tableColHeader}>Citation</Text>
+      </View>
+    </View>
 
-    <View style={styles.table}>
+    {methylphenidateData.map((item, index) => (
       <View
         style={{
           flexDirection: "row",
@@ -126,40 +136,19 @@ const MethylphenidateTablePDF = () => (
           breakInside: "avoid",
         }}
       >
-        <View style={styles.tableHeader} wrap={false}>
-          <Text style={styles.tableColHeader}>Drug</Text>
-          <Text style={styles.tableColHeader}>Gene&nbsp;•&nbsp;Genotype</Text>
-          <Text style={styles.longColHeader}>Clinical Impact</Text>
-          <Text style={styles.tableColHeader}>PGx</Text>
-          <Text style={styles.tableColHeader}>Citation</Text>
+        <View style={styles.tableRow} key={index} wrap={false}>
+          <Text style={styles.tableColFirst}>
+            {item.drug}
+            {"\n"}
+            <Text style={{ color: "gray" }}>{item.aliases}</Text>
+          </Text>
+          <Text style={styles.tableCol}>{item.gene}</Text>
+          <Text style={styles.longCol}>{item.impact}</Text>
+          <Text style={styles.tableCol}>{item.interaction}</Text>
+          <Text style={styles.tableCol}>{item.citation}</Text>
         </View>
       </View>
-
-      {/* Table Rows */}
-      {methylphenidateData.map((item, index) => (
-        <View
-          style={{
-            flexDirection: "row",
-            flexWrap: "nowrap",
-            breakInside: "avoid",
-          }}
-        >
-          <View style={styles.tableRow} key={index} wrap={false}>
-            <Text style={styles.tableColFirst}>
-              {item.drug}
-              {"\n"}
-              <Text style={{ color: "gray" }}>{item.aliases}</Text>
-            </Text>
-            <Text style={styles.tableCol}>{item.gene}</Text>
-            <View style={styles.longCol}>
-              <Text>{item.impact}</Text>
-            </View>
-            <Text style={styles.tableCol}>{item.interaction}</Text>
-            <Text style={styles.tableCol}>{item.citation}</Text>
-          </View>
-        </View>
-      ))}
-    </View>
+    ))}
   </View>
 );
 

@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     padding: 4,
     fontSize: 9,
     lineHeight: 1.3,
-    minHeight: 100,
+    minHeight: 120,
     wordBreak: "break-word",
   },
 });

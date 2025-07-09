@@ -76,21 +76,23 @@ const SecondFooter = () => {
       <View style={styles.wrapper}>
         <View style={styles.row}>
           <View style={styles.column}>
-            <Text>Drug Risk assessment annotations</Text>
-            <Text>
-              <Text style={[styles.badge, styles.improved]}>🟢</Text>
+            <Text style={{ marginBottom: 4 }}>
+              Drug Risk assessment annotations
+            </Text>
+            <Text style={{ paddingTop: 4 }}>
+              {/* <Text style={[styles.badge, styles.improved]}>🟢</Text> */}
               Improved Clinical outcome
             </Text>
           </View>
           <View style={styles.column}>
             <Text>
-              <Text style={[styles.badge, styles.moderate]}>🟡</Text>
+              {/* <Text style={[styles.badge, styles.moderate]}>🟡</Text> */}
               Moderate interaction
             </Text>
           </View>
           <View style={styles.column}>
             <Text>
-              <Text style={[styles.badge, styles.significant]}>🔴</Text>
+              {/* <Text style={[styles.badge, styles.significant]}>🔴</Text> */}
               Significant Interaction
             </Text>
           </View>
@@ -101,14 +103,10 @@ const SecondFooter = () => {
         <View style={styles.bottomRow}>
           <View style={styles.col8}>
             <Text>Pharmacokinetic & Pharmacodynamic genes annotations</Text>
-            <Text>
-              <Text style={styles.pkpdType}>PK</Text>
-              <Text style={styles.pkpdType}>PD</Text>
-            </Text>
           </View>
           <View style={styles.col4}>
-            <Text>*: FDA</Text>
-            <Text style={styles.cpic}>*: CPIC</Text>
+            <Text style={{ marginBottom: 4 }}>*: FDA</Text>
+            <Text style={{ paddingTop: 4 }}>*: CPIC</Text>
           </View>
         </View>
 

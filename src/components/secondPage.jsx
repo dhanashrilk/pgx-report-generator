@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   section: {
+    marginBottom: 10,
     paddingBottom: 10,
   },
 

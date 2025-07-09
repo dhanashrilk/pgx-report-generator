@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
   },
   section: {
     marginBottom: 10,
+    paddingBottom: 10,
   },
 
   titleGray: {
