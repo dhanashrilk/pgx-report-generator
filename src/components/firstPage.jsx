@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 20,
+
     width: "100%",
   },
 
@@ -40,22 +40,24 @@ const styles = StyleSheet.create({
   formLine: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 8,
-    padding: "10px 0",
+    padding: "10px",
+    width: "100%",
   },
   label: {
-    fontSize: 10,
-    width: 100, // Adjust this value to align labels properly
+    fontSize: "10px",
+    fontWeight: 600,
+    width: "100%", // Adjust this value to align labels properly
+  },
+  value: {
+    fontSize: "10px",
+    width: "100%", // Adjust this value to align labels properly
   },
   line: {
     borderBottomWidth: 1,
-    borderColor: "#000",
-    flex: 1,
-    height: 0.5,
+    borderBottomColor: "#000", // change from `borderColor`
     marginLeft: 6,
     width: "100%",
   },
-
   patientInfoRow: {
     flexDirection: "row",
     justifyContent: "flex-start",
@@ -63,13 +65,21 @@ const styles = StyleSheet.create({
     padding: "1px",
   },
   patientInfo: {
-    padding: "20px",
+    padding: "10px",
     backgroundColor: "#dcefef",
     borderTopRightRadius: "30px",
     borderBottomLeftRadius: "30px",
     height: "100%",
     width: "100%",
     justifyContent: "center",
+  },
+  grayForm: {
+    backgroundColor: "#e4e4e4",
+    width: "100%",
+    justifyContent: "center",
+    borderRadius: "10px",
+    padding: "20px",
+    height: "50%",
   },
 });
 
@@ -131,34 +141,36 @@ const FirstPage = () => (
     </View>
 
     {/* Input Section */}
-    <View style={styles.row}>
-      <View style={styles.col}>
-        <View style={styles.formLine}>
-          <Text style={styles.label}>Electronically Signed By</Text>
-          <View style={styles.line} />
+    <View style={styles.grayForm}>
+      <View style={styles.row}>
+        <View style={styles.col}>
+          <View style={styles.formLine}>
+            <Text style={styles.value}>Electronically Signed By</Text>
+            <View style={styles.line} />
+          </View>
+          <View style={styles.formLine}>
+            <Text style={styles.value}>Literature Information Reviewed By</Text>
+            <View style={styles.line} />
+          </View>
+          <View style={styles.formLine}>
+            <Text style={styles.value}>Comment</Text>
+            <View style={styles.line} />
+          </View>
         </View>
-        <View style={styles.formLine}>
-          <Text style={styles.label}>Literature Information Reviewed By</Text>
-          <View style={styles.line} />
-        </View>
-        <View style={styles.formLine}>
-          <Text style={styles.label}>Comment</Text>
-          <View style={styles.line} />
-        </View>
-      </View>
 
-      <View style={styles.col}>
-        <View style={styles.formLine}>
-          <Text style={styles.label}>Contact Information</Text>
-          <View style={styles.line} />
-        </View>
-        <View style={styles.formLine}>
-          <Text style={styles.label}>Phone number</Text>
-          <View style={styles.line} />
-        </View>
-        <View style={styles.formLine}>
-          <Text style={styles.label}>Email</Text>
-          <View style={styles.line} />
+        <View style={styles.col}>
+          <View style={styles.formLine}>
+            <Text style={styles.value}>Contact Information</Text>
+            <View style={styles.line} />
+          </View>
+          <View style={styles.formLine}>
+            <Text style={styles.value}>Phone number</Text>
+            <View style={styles.line} />
+          </View>
+          <View style={styles.formLine}>
+            <Text style={styles.value}>Email</Text>
+            <View style={styles.line} />
+          </View>
         </View>
       </View>
     </View>

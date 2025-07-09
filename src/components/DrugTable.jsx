@@ -1,5 +1,4 @@
-import React from "react";
-import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
+import { StyleSheet, Text, View } from "@react-pdf/renderer";
 
 // Sample data (same as provided)
 const drugData = [
@@ -66,92 +65,118 @@ const drugData = [
 ];
 
 // Styles
+
+const borderColor = "#53c4cd";
+
 const styles = StyleSheet.create({
-  page: {
-    padding: 20,
-    fontSize: 10,
-    fontFamily: "Helvetica",
-  },
   table: {
     display: "table",
-    width: "auto",
-    marginVertical: 10,
-    borderStyle: "solid",
+    width: "100%",
+    marginTop: 10,
+  },
+  // Header row: top, bottom, right borders
+  tableHeader: {
+    flexDirection: "row",
     borderWidth: 1,
-    borderRightWidth: 0,
-    borderBottomWidth: 0,
+    // borderBottomWidth: 1,
+    borderColor: borderColor,
   },
   tableRow: {
     flexDirection: "row",
+    borderBottomWidth: 1,
+    borderColor: borderColor, // light row separator
+    breakInside: "avoid", // prevent breaking row mid-page
   },
   tableColHeader: {
-    width: "20%",
-    borderStyle: "solid",
-    borderBottomWidth: 1,
-    borderRightWidth: 1,
-    backgroundColor: "#f0f0f0",
+    width: "15%",
     padding: 4,
     fontWeight: "bold",
+    fontSize: 10,
+    textAlign: "center",
+    borderRightWidth: 1,
+    borderColor: borderColor,
+    color: "#007d8c",
   },
   tableCol: {
-    width: "20%",
-    borderStyle: "solid",
-    borderBottomWidth: 1,
-    borderRightWidth: 1,
+    width: "15%",
     padding: 4,
+    fontSize: 9,
+    lineHeight: 1.3,
+  },
+  tableColFirst: {
+    width: "15%",
+    padding: 4,
+    fontSize: 9,
+    fontWeight: "bold",
+    lineHeight: 1.3,
+  },
+  longColHeader: {
+    width: "40%",
+    padding: 4,
+    fontWeight: "bold",
+    fontSize: 10,
+    lineHeight: 1.3,
+    textAlign: "center",
+    color: "#007d8c",
+    borderRightWidth: 1,
+    borderColor: borderColor,
   },
   longCol: {
     width: "40%",
     padding: 4,
-    borderStyle: "solid",
-    borderBottomWidth: 1,
-    borderRightWidth: 1,
-  },
-  iconCell: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 2,
+    fontSize: 9,
+    lineHeight: 1.3,
+    minHeight: 60,
+    wordBreak: "break-word",
   },
 });
 
-// PDF Component
-const DrugTablePDF = () => (
-  <Document>
-    <Page size="A4" style={styles.page}>
-      <Text style={{ fontSize: 14, marginBottom: 10, textAlign: "center" }}>
-        Gene-Drug Interaction Table
-      </Text>
+const DrugTable = () => (
+  <View>
+    {/* <Text style={{ fontSize: 10, marginBottom: 10, textAlign: "center" }}>
+      Gene-Drug Interaction Table
+    </Text> */}
 
-      <View style={styles.table}>
-        {/* Header */}
-        <View style={styles.tableRow}>
+    <View style={styles.table}>
+      <View
+        style={{
+          flexDirection: "row",
+          flexWrap: "nowrap",
+          breakInside: "avoid",
+        }}
+      >
+        <View style={styles.tableHeader}>
           <Text style={styles.tableColHeader}>Drug</Text>
-          <Text style={styles.tableColHeader}>Gene • Genotype</Text>
-          <Text style={styles.longCol}>Clinical Impact</Text>
+          <Text style={styles.tableColHeader}>Gene&nbsp;•&nbsp;Genotype</Text>
+          <Text style={styles.longColHeader}>Clinical Impact</Text>
           <Text style={styles.tableColHeader}>PGx</Text>
           <Text style={styles.tableColHeader}>Citation</Text>
         </View>
+      </View>
 
-        {/* Body */}
-        {drugData.map((item, index) => (
+      {drugData.map((item, index) => (
+        <View
+          style={{
+            flexDirection: "row",
+            flexWrap: "nowrap",
+            breakInside: "avoid",
+          }}
+        >
           <View style={styles.tableRow} key={index}>
-            <Text style={styles.tableCol}>
+            <Text style={styles.tableColFirst}>
               {item.drug}
               {"\n"}
               <Text style={{ color: "gray" }}>{item.aliases}</Text>
             </Text>
             <Text style={styles.tableCol}>{item.gene}</Text>
             <Text style={styles.longCol}>{item.impact}</Text>
-            <Text style={styles.tableCol}>
-              {item.icon} {item.interaction}
-              {"\n"}({item.pgxType})
-            </Text>
+            <Text style={styles.tableCol}>{item.interaction}</Text>
             <Text style={styles.tableCol}>{item.citation}</Text>
           </View>
-        ))}
-      </View>
-    </Page>
-  </Document>
+        </View>
+      ))}
+    </View>
+  </View>
 );
 
-export default DrugTablePDF;
+export default DrugTable;

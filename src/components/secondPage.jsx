@@ -8,35 +8,24 @@ import Footer from "./Footer";
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10,
-    marginTop: 15,
+    marginTop: 2,
     width: "100%",
   },
   section: {
     marginBottom: 10,
   },
-  titleBlue: {
-    backgroundColor: "#00BAD7",
-    color: "#fff",
-    padding: 10,
-    fontSize: 14,
-    borderTopLeftRadius: 12,
-    textAlign: "center",
-    fontWeight: 500,
-  },
-  titleGreen: {
-    backgroundColor: "#5DC0A0",
-    color: "#fff",
-    padding: 10,
-    fontSize: 12,
-    textAlign: "center",
-    fontWeight: 600,
-  },
+
   titleGray: {
     backgroundColor: "#DAE5EA",
     color: "#5A676E",
-    padding: 10,
-    fontSize: 12,
+    flexDirection: "row",
+    alignItems: "center",
+    fontSize: 14,
+
     textAlign: "center",
+    fontWeight: 500,
+    minHeight: 30,
+    paddingTop: 8,
     fontWeight: 600,
     borderBottomRightRadius: 12,
   },
@@ -44,30 +33,25 @@ const styles = StyleSheet.create({
 
 const SecondPage = () => (
   <View style={styles.container}>
-    <View style={styles.section}>
-      <Text style={styles.titleBlue}>GENE DRUG INTERACTION</Text>
-    </View>
-
-    <View style={styles.section}>
-      <Text style={styles.titleGreen}>Drug Synopsis with risk assessment</Text>
-    </View>
-
-    <View style={styles.section}>
-      <Text style={styles.titleGray}>ANTIEPILEPTICS</Text>
-      <DrugTable />
-    </View>
-
-    <View style={styles.section}>
-      <Text style={styles.titleGray}>PSYCHOSTIMULANTS</Text>
-      <MethylphenidateTable />
+    <View>
+      <View style={styles.section}>
+        <Text style={styles.titleGray}>ANTIEPILEPTICS</Text>
+      </View>
+      <View style={styles.section}>
+        <DrugTable />
+      </View>
+      <View style={styles.section}>
+        <Text style={styles.titleGray}>PSYCHOSTIMULANTS</Text>
+      </View>
+      <View style={styles.section}>
+        <MethylphenidateTable />
+      </View>
     </View>
 
     <View style={styles.section}>
       <Text style={styles.titleGray}>ANTIPSYCHOTICS</Text>
       <RisperidoneTable />
     </View>
-
-    <Footer />
   </View>
 );
 

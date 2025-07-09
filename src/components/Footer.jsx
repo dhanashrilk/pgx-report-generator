@@ -1,64 +1,43 @@
-import { FiThumbsUp, FiThumbsDown } from "react-icons/fi";
+import { Image, StyleSheet, Text, View } from "@react-pdf/renderer";
+import footerLogo from "../images/footer-logo.png";
 
+const styles = StyleSheet.create({
+  footer: {
+    // borderTop: "1px solid #ccc",
+
+    padding: "20px",
+    marginTop: "auto",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  footerText: {
+    fontSize: 8,
+    width: "100%",
+    padding: "20px",
+    paddingTop: "20px",
+  },
+  footerImage: {
+    height: 40,
+    width: 80,
+  },
+});
 const Footer = () => (
-  <footer className="card-footer">
-    <div className="footer-card">
-      <div className="footer-top">
-        <div className="footer-col">
-          <p className="py-0 mb-0">Drug Risk assessment annotations</p>
-          <p className="py-0 mb-0">
-            <span className={`interaction-badge improved mx-2`}>
-              <FiThumbsUp />
-            </span>
-            Improved Clinical outcome
-          </p>
-        </div>
-        <div className="footer-col">
-          <p className="py-0 mb-0">&nbsp;</p>
-          <p>
-            <span className={`interaction-badge moderate mx-2`}>
-              <FiThumbsUp />
-            </span>
-            Moderate interaction
-          </p>
-        </div>
-        <div className="footer-col">
-          <p className="py-0 mb-0">&nbsp;</p>
-          <p>
-            <span className={`interaction-badge significant mx-2`}>
-              <FiThumbsDown />
-            </span>
-            Moderate interaction
-          </p>
-        </div>
-      </div>
-
-      <div className="footer-bottom">
-        <div className="footer-left">
-          <p className="py-0 mb-0">
-            Pharmacokinetic & Pharmacodynamic genes annotations
-          </p>
-          <p className="py-0 mb-0">
-            <span className="pgx-type text-center px-2">PK</span>
-            <span className="pgx-type text-center px-2 mx-2">PD</span>
-          </p>
-        </div>
-        <div className="footer-right">
-          <p>*: FDA</p>
-          <p className="" style={{ color: "#f59524" }}>
-            *: CPIC
-          </p>
-        </div>
-      </div>
-
-      <p className="note-desc">
-        Pharmacogenomic (PGx) response outlined in this report is derived from
-        peer-reviewed research and the patient’s specific genotype, enabling an
-        assessment of the patient’s likelihood of experiencing strong or reduced
-        efficacy, as well as high or low risk involvement with the treatment.
-      </p>
-    </div>
-  </footer>
+  <View style={styles.footer} fixed>
+    <Text style={styles.footerText}>
+      Disclaimer: This report is intended to supplement a comprehensive patient
+      assessment, including but not limited to diagnosis, clinical history, and
+      evaluation of co-morbid conditions. It should not be used as the sole
+      basis for prescribing decisions. For the most current information on
+      gene-drug associations, please refer to resources such as CPIC, FDA Table
+      of Pharmacogenetic Associations. Please note that pharmacokinetics and
+      pharmacodynamics may evolve over time, and this report may not reflect the
+      latest findings. Prescribers should also consider approved drug labeling,
+      clinical practice guidelines, and other relevant factors such as family
+      history when making treatment decisions.
+    </Text>
+    <Image src={footerLogo} style={styles.footerImage} />
+  </View>
 );
 
 export default Footer;
