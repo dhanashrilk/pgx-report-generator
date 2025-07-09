@@ -6,11 +6,11 @@ import RisperidoneTable from "./RisperidoneTable";
 import Footer from "./Footer";
 
 const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 10,
-    marginTop: 2,
-    width: "100%",
-  },
+  // container: {
+  //   paddingHorizontal: 10,
+  //   marginTop: 2,
+  //   width: "100%",
+  // },
   section: {
     marginBottom: 10,
   },

@@ -3,8 +3,6 @@ import footerLogo from "../images/footer-logo.png";
 
 const styles = StyleSheet.create({
   footer: {
-    // borderTop: "1px solid #ccc",
-
     padding: "20px",
     marginTop: "auto",
     flexDirection: "row",
@@ -14,12 +12,14 @@ const styles = StyleSheet.create({
   footerText: {
     fontSize: 8,
     width: "100%",
-    padding: "20px",
+    padding: "20px 0",
     paddingTop: "20px",
+    paddingBottom: "20px",
   },
   footerImage: {
     height: 40,
     width: 80,
+    paddingLeft: 4,
   },
 });
 const Footer = () => (
