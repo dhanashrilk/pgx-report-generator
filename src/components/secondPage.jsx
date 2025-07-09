@@ -6,13 +6,12 @@ import RisperidoneTable from "./RisperidoneTable";
 import Footer from "./Footer";
 
 const styles = StyleSheet.create({
-  // container: {
-  //   paddingHorizontal: 10,
-  //   marginTop: 2,
-  //   width: "100%",
-  // },
+  container: {
+    marginTop: 2,
+    width: "100%",
+  },
   section: {
-    marginBottom: 10,
+    paddingBottom: 10,
   },
 
   titleGray: {
@@ -33,19 +32,15 @@ const styles = StyleSheet.create({
 
 const SecondPage = () => (
   <View style={styles.container}>
-    <View>
-      <View style={styles.section}>
-        <Text style={styles.titleGray}>ANTIEPILEPTICS</Text>
-      </View>
-      <View style={styles.section}>
-        <DrugTable />
-      </View>
-      <View style={styles.section}>
-        <Text style={styles.titleGray}>PSYCHOSTIMULANTS</Text>
-      </View>
-      <View style={styles.section}>
-        <MethylphenidateTable />
-      </View>
+    <View style={styles.section}>
+      <Text style={styles.titleGray}>ANTIEPILEPTICS</Text>
+
+      <DrugTable />
+    </View>
+    <View style={styles.section}>
+      <Text style={styles.titleGray}>PSYCHOSTIMULANTS</Text>
+
+      <MethylphenidateTable />
     </View>
 
     <View style={styles.section}>

@@ -19,6 +19,7 @@ import SecondHeader from "./secondHeader";
 import DrugTable from "./DrugTable";
 import MethylphenidateTablePDF from "./MethylphenidateTable";
 import RisperidoneTablePDF from "./RisperidoneTable";
+import SecondFooter from "./secondFooter";
 
 // Styles
 const styles = StyleSheet.create({
@@ -60,6 +61,9 @@ const styles = StyleSheet.create({
     fontWeight: 600,
     borderBottomRightRadius: 12,
   },
+  footerWrapper: {
+    paddingTop: 40,
+  },
 });
 
 const MyPDFDocument = () => {
@@ -71,18 +75,17 @@ const MyPDFDocument = () => {
         </View>
         <Footer />
       </Page>
-      <Page size="A4" style={styles.page}>
-        <View style={styles.header} fixed>
+      <Page size="A4" style={styles.page} wrap>
+        <View style={styles.headerWrapper} fixed>
           <SecondHeader />
         </View>
-
         <View style={styles.body} wrap>
           <SecondPage />
         </View>
-
         {/* Fixed Footer - shows on every physical page */}
-
-        <Footer />
+        <View style={styles.footerWrapper} fixed>
+          <SecondFooter />
+        </View>
       </Page>
     </Document>
   );

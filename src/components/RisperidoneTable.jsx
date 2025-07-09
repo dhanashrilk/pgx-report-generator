@@ -25,17 +25,20 @@ const styles = StyleSheet.create({
     width: "100%",
     marginTop: 10,
   },
+  // Header row: top, bottom, right borders
   tableHeader: {
     flexDirection: "row",
     borderWidth: 1,
+    // borderBottomWidth: 1,
     borderColor: borderColor,
-    backgroundColor: "#e6f7f8",
+    minHeight: 40,
   },
   tableRow: {
     flexDirection: "row",
     borderBottomWidth: 1,
     borderColor: borderColor,
-    breakInside: "avoid", // prevent breaking row mid-page
+    breakInside: "avoid",
+    paddingTop: 8,
   },
   tableColHeader: {
     width: "15%",
@@ -46,14 +49,20 @@ const styles = StyleSheet.create({
     borderRightWidth: 1,
     borderColor: borderColor,
     color: "#007d8c",
+    minHeight: 40,
   },
   tableCol: {
     width: "15%",
     padding: 4,
     fontSize: 9,
     lineHeight: 1.3,
-    borderRightWidth: 1,
-    borderColor: borderColor,
+  },
+  tableColFirst: {
+    width: "15%",
+    padding: 4,
+    fontSize: 9,
+    fontWeight: "bold",
+    lineHeight: 1.3,
   },
   longColHeader: {
     width: "40%",
@@ -65,22 +74,22 @@ const styles = StyleSheet.create({
     color: "#007d8c",
     borderRightWidth: 1,
     borderColor: borderColor,
+    minHeight: 40,
   },
   longCol: {
     width: "40%",
     padding: 4,
     fontSize: 9,
     lineHeight: 1.3,
+    minHeight: 100,
     wordBreak: "break-word",
-    borderRightWidth: 1,
-    borderColor: borderColor,
   },
 });
 
 const RisperidoneTablePDF = () => (
   <View style={styles.table}>
     {/* Header */}
-    <View style={styles.tableHeader}>
+    <View style={styles.tableHeader} wrap={false}>
       <Text style={styles.tableColHeader}>Drug</Text>
       <Text style={styles.tableColHeader}>Gene • Genotype</Text>
       <Text style={styles.longColHeader}>Clinical Impact</Text>
@@ -90,7 +99,7 @@ const RisperidoneTablePDF = () => (
 
     {/* Data Rows */}
     {risperidoneData.map((item, index) => (
-      <View style={styles.tableRow} key={index}>
+      <View style={styles.tableRow} key={index} wrap={false}>
         <Text style={styles.tableCol}>
           {item.drug}
           {"\n"}

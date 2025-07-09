@@ -56,12 +56,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     // borderBottomWidth: 1,
     borderColor: borderColor,
+    minHeight: 40,
   },
   tableRow: {
     flexDirection: "row",
     borderBottomWidth: 1,
-    borderColor: borderColor, // light row separator
-    breakInside: "avoid", // prevent breaking row mid-page
+    borderColor: borderColor,
+    breakInside: "avoid",
+    paddingTop: 4,
   },
   tableColHeader: {
     width: "15%",
@@ -72,6 +74,7 @@ const styles = StyleSheet.create({
     borderRightWidth: 1,
     borderColor: borderColor,
     color: "#007d8c",
+    minHeight: 40,
   },
   tableCol: {
     width: "15%",
@@ -96,13 +99,14 @@ const styles = StyleSheet.create({
     color: "#007d8c",
     borderRightWidth: 1,
     borderColor: borderColor,
+    minHeight: 40,
   },
   longCol: {
     width: "40%",
     padding: 4,
     fontSize: 9,
     lineHeight: 1.3,
-    minHeight: 60,
+    minHeight: 100,
     wordBreak: "break-word",
   },
 });
@@ -122,7 +126,7 @@ const MethylphenidateTablePDF = () => (
           breakInside: "avoid",
         }}
       >
-        <View style={styles.tableHeader}>
+        <View style={styles.tableHeader} wrap={false}>
           <Text style={styles.tableColHeader}>Drug</Text>
           <Text style={styles.tableColHeader}>Gene&nbsp;•&nbsp;Genotype</Text>
           <Text style={styles.longColHeader}>Clinical Impact</Text>
@@ -140,7 +144,7 @@ const MethylphenidateTablePDF = () => (
             breakInside: "avoid",
           }}
         >
-          <View style={styles.tableRow} key={index}>
+          <View style={styles.tableRow} key={index} wrap={false}>
             <Text style={styles.tableColFirst}>
               {item.drug}
               {"\n"}

@@ -80,12 +80,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     // borderBottomWidth: 1,
     borderColor: borderColor,
+    minHeight: 40,
   },
   tableRow: {
     flexDirection: "row",
     borderBottomWidth: 1,
-    borderColor: borderColor, // light row separator
-    breakInside: "avoid", // prevent breaking row mid-page
+    borderColor: borderColor,
+    breakInside: "avoid",
+    paddingTop: 8,
   },
   tableColHeader: {
     width: "15%",
@@ -96,6 +98,7 @@ const styles = StyleSheet.create({
     borderRightWidth: 1,
     borderColor: borderColor,
     color: "#007d8c",
+    minHeight: 40,
   },
   tableCol: {
     width: "15%",
@@ -120,24 +123,37 @@ const styles = StyleSheet.create({
     color: "#007d8c",
     borderRightWidth: 1,
     borderColor: borderColor,
+    minHeight: 40,
   },
   longCol: {
     width: "40%",
     padding: 4,
     fontSize: 9,
     lineHeight: 1.3,
-    minHeight: 60,
+    minHeight: 100,
     wordBreak: "break-word",
   },
 });
 
 const DrugTable = () => (
-  <View>
-    {/* <Text style={{ fontSize: 10, marginBottom: 10, textAlign: "center" }}>
-      Gene-Drug Interaction Table
-    </Text> */}
+  <View style={styles.table}>
+    <View
+      style={{
+        flexDirection: "row",
+        flexWrap: "nowrap",
+        breakInside: "avoid",
+      }}
+    >
+      <View style={styles.tableHeader} wrap={false}>
+        <Text style={styles.tableColHeader}>Drug</Text>
+        <Text style={styles.tableColHeader}>Gene&nbsp;•&nbsp;Genotype</Text>
+        <Text style={styles.longColHeader}>Clinical Impact</Text>
+        <Text style={styles.tableColHeader}>PGx</Text>
+        <Text style={styles.tableColHeader}>Citation</Text>
+      </View>
+    </View>
 
-    <View style={styles.table}>
+    {drugData.map((item, index) => (
       <View
         style={{
           flexDirection: "row",
@@ -145,37 +161,19 @@ const DrugTable = () => (
           breakInside: "avoid",
         }}
       >
-        <View style={styles.tableHeader}>
-          <Text style={styles.tableColHeader}>Drug</Text>
-          <Text style={styles.tableColHeader}>Gene&nbsp;•&nbsp;Genotype</Text>
-          <Text style={styles.longColHeader}>Clinical Impact</Text>
-          <Text style={styles.tableColHeader}>PGx</Text>
-          <Text style={styles.tableColHeader}>Citation</Text>
+        <View style={styles.tableRow} key={index} wrap={false}>
+          <Text style={styles.tableColFirst}>
+            {item.drug}
+            {"\n"}
+            <Text style={{ color: "gray" }}>{item.aliases}</Text>
+          </Text>
+          <Text style={styles.tableCol}>{item.gene}</Text>
+          <Text style={styles.longCol}>{item.impact}</Text>
+          <Text style={styles.tableCol}>{item.interaction}</Text>
+          <Text style={styles.tableCol}>{item.citation}</Text>
         </View>
       </View>
-
-      {drugData.map((item, index) => (
-        <View
-          style={{
-            flexDirection: "row",
-            flexWrap: "nowrap",
-            breakInside: "avoid",
-          }}
-        >
-          <View style={styles.tableRow} key={index}>
-            <Text style={styles.tableColFirst}>
-              {item.drug}
-              {"\n"}
-              <Text style={{ color: "gray" }}>{item.aliases}</Text>
-            </Text>
-            <Text style={styles.tableCol}>{item.gene}</Text>
-            <Text style={styles.longCol}>{item.impact}</Text>
-            <Text style={styles.tableCol}>{item.interaction}</Text>
-            <Text style={styles.tableCol}>{item.citation}</Text>
-          </View>
-        </View>
-      ))}
-    </View>
+    ))}
   </View>
 );
 
