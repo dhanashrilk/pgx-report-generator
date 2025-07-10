@@ -54,13 +54,13 @@ const styles = StyleSheet.create({
   tableCol: {
     width: "15%",
     padding: 4,
-    fontSize: 9,
+    fontSize: 8,
     lineHeight: 1.3,
   },
   tableColFirst: {
     width: "15%",
     padding: 4,
-    fontSize: 9,
+    fontSize: 8,
     fontWeight: "bold",
     lineHeight: 1.3,
   },
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   longCol: {
     width: "40%",
     padding: 4,
-    fontSize: 9,
+    fontSize: 8,
     lineHeight: 1.3,
     minHeight: 100,
     wordBreak: "break-word",
@@ -100,17 +100,14 @@ const RisperidoneTablePDF = () => (
     {/* Data Rows */}
     {risperidoneData.map((item, index) => (
       <View style={styles.tableRow} key={index} wrap={false}>
-        <Text style={styles.tableCol}>
+        <Text style={styles.tableColFirst}>
           {item.drug}
           {"\n"}
           <Text style={{ color: "gray" }}>{item.aliases}</Text>
         </Text>
         <Text style={styles.tableCol}>{item.gene}</Text>
         <Text style={styles.longCol}>{item.impact}</Text>
-        <Text style={styles.tableCol}>
-          {item.icon} {item.interaction}
-          {"\n"}({item.pgxType.join(", ")})
-        </Text>
+        <Text style={styles.tableCol}>({item.pgxType.join(", ")})</Text>
         <Text style={styles.tableCol}>{item.citation}</Text>
       </View>
     ))}

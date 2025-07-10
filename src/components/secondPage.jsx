@@ -48,6 +48,20 @@ const SecondPage = () => (
       <Text style={styles.titleGray}>ANTIPSYCHOTICS</Text>
       <RisperidoneTable />
     </View>
+    <View style={styles.section}>
+      <Text style={styles.titleGray}>ANTIPSYCHOTICS</Text>
+      <RisperidoneTable />
+    </View>
+    <View style={styles.section}>
+      <Text style={styles.titleGray}>PSYCHOSTIMULANTS</Text>
+
+      <MethylphenidateTable />
+    </View>
+    <View style={styles.section}>
+      <Text style={styles.titleGray}>PSYCHOSTIMULANTS</Text>
+
+      <MethylphenidateTable />
+    </View>
   </View>
 );
 
